@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-inter: "Inter", sans-serif;
+  --color-neutralcanvas-50: oklch(98.5% 0.002 247.8);
+  --color-neutralcanvas-100: oklch(96.7% 0.003 264.5);
+  --color-neutralcanvas-200: oklch(92.8% 0.006 264.5);
+  --color-neutralcanvas-300: oklch(87.2% 0.009 258.3);
+  --color-neutralcanvas-400: oklch(71.4% 0.019 261.3);
+  --color-neutralcanvas-500: oklch(55.1% 0.023 264.4);
+  --color-neutralcanvas-600: oklch(44.6% 0.026 256.8);
+  --color-neutralcanvas-700: oklch(37.3% 0.031 259.7);
+  --color-neutralcanvas-800: oklch(27.8% 0.030 256.8);
+  --color-neutralcanvas-900: oklch(21.0% 0.032 264.7);
+  --color-neutralcanvas-950: oklch(13.0% 0.027 261.7);
+  --color-richchocolate-50: oklch(98.8% 0.003 84.6);
+  --color-richchocolate-100: oklch(95.8% 0.009 67.7);
+  --color-richchocolate-200: oklch(90.6% 0.018 70.2);
+  --color-richchocolate-300: oklch(83.2% 0.032 56.5);
+  --color-richchocolate-400: oklch(68.4% 0.069 56.4);
+  --color-richchocolate-500: oklch(42.2% 0.067 49.5);
+  --color-richchocolate-600: oklch(37.1% 0.059 48.8);
+  --color-richchocolate-700: oklch(31.9% 0.047 49.5);
+  --color-richchocolate-800: oklch(26.6% 0.037 49.4);
+  --color-richchocolate-900: oklch(21.2% 0.026 44.1);
+  --color-richchocolate-950: oklch(17.9% 0.018 50.2);
+  --color-mellowcream-50: oklch(99.1% 0.001 106.4);
+  --color-mellowcream-100: oklch(96.8% 0.006 75.4);
+  --color-mellowcream-200: oklch(93.1% 0.011 71.9);
+  --color-mellowcream-300: oklch(87.6% 0.024 73.6);
+  --color-mellowcream-400: oklch(84.1% 0.034 57.1);
+  --color-mellowcream-500: oklch(77.8% 0.041 70.9);
+  --color-mellowcream-600: oklch(70.4% 0.041 65.8);
+  --color-mellowcream-700: oklch(63.2% 0.041 64.4);
+  --color-mellowcream-800: oklch(56.0% 0.040 65.5);
+  --color-mellowcream-900: oklch(48.9% 0.037 65.2);
+  --color-mellowcream-950: oklch(32.1% 0.018 60.0);
+}
