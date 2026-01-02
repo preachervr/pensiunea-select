@@ -51,43 +51,60 @@ const btnNext = document.getElementById("next");
 
 let currentSlide = 0;
 const totalSlides = slides.length;
+let slideInterval;
 
 function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove("opacity-100"));
-  slides.forEach(slide => slide.classList.add("opacity-0"));
+
+  if (index >= totalSlides) currentSlide = 0;
+  else if (index < 0) currentSlide = totalSlides - 1;
+  else currentSlide = index;
+
+  slides.forEach(slide => {
+    slide.classList.remove("opacity-100");
+    slide.classList.add("opacity-0");
+  });
 
   indicators.forEach(ind => {
     ind.classList.remove("bg-neutralcanvas-50");
     ind.classList.add("bg-neutralcanvas-50/40");
   });
 
-  slides[index].classList.remove("opacity-0");
-  slides[index].classList.add("opacity-100");
+  slides[currentSlide].classList.remove("opacity-0");
+  slides[currentSlide].classList.add("opacity-100");
 
-  if(indicators[index]) {
-    indicators[index].classList.remove("bg-neutralcanvas-50/40");
-    indicators[index].classList.add("bg-neutralcanvas-50");
+  if(indicators[currentSlide]) {
+    indicators[currentSlide].classList.remove("bg-neutralcanvas-50/40");
+    indicators[currentSlide].classList.add("bg-neutralcanvas-50");
   }
 }
 
-btnNext.addEventListener("click", () => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-});
 
-btnPrev.addEventListener("click", () => {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-});
+function resetTimer() {
+  clearInterval(slideInterval);
+  slideInterval = setInterval(() => {
+    showSlide(currentSlide + 1);
+  }, 5000);
+}
 
-setInterval(() => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-}, 5000);
+if (btnNext) {
+    btnNext.addEventListener("click", () => {
+      showSlide(currentSlide + 1);
+      resetTimer();
+    });
+}
+
+if (btnPrev) {
+    btnPrev.addEventListener("click", () => {
+      showSlide(currentSlide - 1);
+      resetTimer();
+    });
+}
 
 indicators.forEach((indicator, index) => {
   indicator.addEventListener("click", () => {
-    currentSlide = index;
-    showSlide(currentSlide);
+    showSlide(index);
+    resetTimer();
   });
 });
+
+resetTimer();
