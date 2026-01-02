@@ -108,3 +108,14 @@ indicators.forEach((indicator, index) => {
 });
 
 resetTimer();
+
+// Demo Mode: Unfinished Links Alert
+const unfinishedLinks = document.querySelectorAll('a[href$=".html"]:not([href="index.html"])');
+
+unfinishedLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Stop the browser from going to a 404 page
+        alert("Această secțiune va fi disponibilă după aprobarea proiectului."); 
+        // (Translation: This section will be available after project approval)
+    });
+});
